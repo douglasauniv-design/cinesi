@@ -15,8 +15,9 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 🎨 Design
 
-- 🎨 **Design System** — _A definir na Atividade 04._
-- 🖼️ **Protótipo no Figma** — _A definir na Atividade 04._
+- [🎨 **Design System**](https://stitch.withgoogle.com/projects/8887506944118544137)
+- [🖼️ **Protótipo no Figma**](https://www.figma.com/design/Km4b1Z7zpLQ17vnjCW60Bh/CineSI?node-id=0-1&t=Mlny9W9tP7Q66SzS-1)
+
 
 ## 🌐 Site em Produção — GitHub Pages
 
