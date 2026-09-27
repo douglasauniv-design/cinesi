@@ -124,3 +124,22 @@ Endpoints utilizados:
 **Imagens responsivas:** o TMDB serve o mesmo pôster em várias larguras através do segmento de tamanho da URL (`w185`, `w342`, `w500`, `original`), o que permite carregamento adaptativo via `srcset` sem depender de um serviço externo de otimização.
 
 **Limitação conhecida:** a API exige uma chave gratuita obtida por cadastro. Como a aplicação é estática e roda inteiramente no navegador, essa chave fica visível no código publicado. Evitar isso exigiria um backend intermediário, o que está fora do escopo da disciplina.
+
+## 6. Stack Tecnológica e Versões
+
+Versões fixadas para garantir compatibilidade e para orientar agentes de IA a gerarem código com as classes e métodos corretos.
+
+| Tecnologia | Versão | Papel no projeto |
+|---|---|---|
+| **Bootstrap** | `v5.3.8` | Framework CSS. Grid, componentes visuais e componentes JavaScript (modal e carousel). |
+| **TMDB API** | `v3` | API pública. Catálogo de filmes e séries. |
+| **jQuery** | `v3.7.x` | Manipulação do DOM, eventos e animações no código próprio da aplicação. |
+| **jQuery Mask Plugin** | `v1.14.16` | Máscara dos campos de telefone e data no formulário de perfil. |
+| **JSON Server** | `v1.x` | API Fake para persistir a coleção do usuário durante o desenvolvimento. |
+| **Sass (Dart Sass)** | `v1.x` | Pré-processador. Variáveis e mixins do Design System. |
+
+As dependências de front-end são carregadas via CDN, conforme exigido pelo deploy estático no GitHub Pages.
+
+### Observação sobre jQuery e Bootstrap 5
+
+O Bootstrap 5 removeu o jQuery como dependência e reescreveu seu JavaScript em módulos ES nativos. O jQuery é incluído neste projeto de forma independente, para o código próprio da aplicação e para viabilizar o uso do jQuery Mask Plugin. As duas bibliotecas convivem sem conflito: os componentes do Bootstrap operam em JavaScript puro e não são inicializados via jQuery.

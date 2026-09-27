@@ -18,19 +18,32 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 - [🎨 **Design System**](https://stitch.withgoogle.com/projects/8887506944118544137)
 - [🖼️ **Protótipo no Figma**](https://www.figma.com/design/Km4b1Z7zpLQ17vnjCW60Bh/CineSI?node-id=0-1&t=Mlny9W9tP7Q66SzS-1)
 
-
 ## 🌐 Site em Produção — GitHub Pages
 
 *A definir na Entrega 3.*
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** *A definir na Atividade 05.*
+- **Framework CSS:** Bootstrap 5
 - **API Pública:** TMDB — The Movie Database
 - **JavaScript:**
   - **jQuery** — manipulação do DOM, eventos e animações.
   - **jQuery Mask Plugin** — máscaras de telefone e data.
   - **JSON Server** — simulação de uma API REST.
+
+### Por que Bootstrap 5?
+
+O CineSI é construído sobre um tema escuro, e o Bootstrap 5 resolve isso nativamente: o atributo `data-bs-theme="dark"` inverte as superfícies sem customização manual, e as variáveis CSS nativas do framework permitem sobrescrever a paleta âmbar do Design System direto no `:root`, sem recompilar Sass.
+
+O ponto decisivo, porém, foi o ecossistema JavaScript. O escopo do CineSI depende de dois componentes interativos — o modal de cadastro e exclusão de títulos, e o carrossel de destaques da página inicial. O Bootstrap entrega ambos prontos, sem bibliotecas externas além do Popper. O Bulma, embora elegante e totalmente baseado em Flexbox, é CSS puro e exigiria implementar esses dois comportamentos manualmente.
+
+Além disso, o projeto é saudável: a versão 5.3.8 saiu em agosto de 2025, a linha 5 está em Active LTS e é a única major recebendo atualizações. A licença é MIT, compatível com projetos de código aberto. O grid de 12 colunas com seis breakpoints cobre a adaptação mobile, tablet e desktop desenhada no protótipo.
+
+### Por que a API do TMDB?
+
+O TMDB é o catálogo que dá sentido ao produto. Sem ele, o usuário teria que digitar manualmente nome, ano, sinopse e gênero de cada filme — atrito suficiente para inviabilizar o cadastro, que é justamente o núcleo da aplicação. Com ele, salvar um título vira uma busca e um clique.
+
+Há um ganho técnico que pesou na escolha: o TMDB serve o mesmo pôster em múltiplas larguras através do próprio caminho da URL (`w185`, `w342`, `w500`, `original`). Isso permite implementar carregamento adaptativo com `srcset` sem depender de um serviço externo de otimização de imagens. Como a interface é dominada por pôsteres, essa característica tem impacto real no desempenho em conexões móveis.
 
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
